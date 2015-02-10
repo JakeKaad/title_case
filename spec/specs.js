@@ -15,7 +15,15 @@ describe('titleCase', function() {
     expect(titleCase("the blob")).to.equal("The Blob");
   });
 
-  it("it doesn't capitalize 'the', 'and', 'or' or 'of'", function(){
+  it("doesn't capitalize 'the', 'and', 'or' or 'of'", function(){
     expect(titleCase("rough and tumble: the story of fact or fiction")).to.equal("Rough and Tumble: the Story of Fact or Fiction");
+  });
+
+  it("titleizes words that are entered in all caps", function() {
+    expect(titleCase("HELLO DOLLY")).to.equal("Hello Dolly");
+  });
+
+  it("titleizes words that are entered with a mix of capitalization", function(){
+    expect(titleCase("hEy DudE")).to.equal("Hey Dude");
   });
 });
